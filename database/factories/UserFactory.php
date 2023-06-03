@@ -22,4 +22,16 @@ class UserFactory extends Factory
             'role' => 'admin',
         ];
     }
+
+    public function admin(): Factory
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'name' => 'admin',
+                'email' => 'admin@admin.com',
+                'password' => Hash::make('secret'),
+                'role' => 'admin',
+            ];
+        });
+    }
 }
